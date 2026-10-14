@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hari Om Telecom & Travels | Cyber Cafe</title>
+<meta name="description" content="Hari Om Telecom & Travels, Saraswati Vihar, Pitampura, Delhi. Railway and flight ticket enquiries, photocopy, printing and money transfer.">
+
+<style>
+:root {
+  --bg: #08111f;
+  --card: #111e31;
+  --blue: #168cff;
+  --cyan: #43d9ff;
+  --white: #f4f8ff;
+  --muted: #a9b8ce;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1120px, 90%); margin: auto; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #08111fee;
+  border-bottom: 1px solid #ffffff14;
+  backdrop-filter: blur(12px);
+}
+.nav {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.logo { font-size: 20px; font-weight: 800; }
+.logo span { color: var(--cyan); }
+nav { display: flex; gap: 23px; align-items: center; }
+nav a { color: var(--muted); font-size: 14px; }
+nav a:hover { color: var(--cyan); }
+.btn {
+  display: inline-block;
+  background: linear-gradient(120deg, var(--blue), #05b9e8);
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 19px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  border: 1px solid #526b89;
+}
+.hero {
+  padding: 90px 0 80px;
+  background:
+    radial-gradient(ellipse at 80% 20%, #075c9c40, transparent 45%),
+    radial-gradient(ellipse at 10% 90%, #00b9d020, transparent 35%);
+}
+.tag {
+  display: inline-block;
+  color: var(--cyan);
+  background: #168cff19;
+  border: 1px solid #168cff55;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(36px, 6vw, 65px);
+  line-height: 1.12;
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+.hero h1 span { color: var(--cyan); }
+.hero p {
+  color: var(--muted);
+  max-width: 590px;
+  margin-bottom: 28px;
+  font-size: 17px;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.quick-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 50px;
+}
+.info {
+  background: #ffffff08;
+  border: 1px solid #ffffff15;
+  padding: 19px;
+  border-radius: 13px;
+}
+.info strong { display: block; font-size: 15px; }
+.info small { color: var(--muted); }
+section { padding: 75px 0; }
+.section-title { font-size: clamp(27px, 4vw, 38px); margin-bottom: 10px; }
+.section-desc { color: var(--muted); margin-bottom: 30px; }
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 19px;
+}
+.service {
+  background: var(--card);
+  border: 1px solid #ffffff12;
+  padding: 25px;
+  border-radius: 15px;
+  transition: .25s;
+}
+.service:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue);
+}
+.service .emoji { font-size: 32px; margin-bottom: 13px; }
+.service h3 { margin-bottom: 8px; font-size: 19px; }
+.service p { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+.service a { color: var(--cyan); font-weight: bold; font-size: 14px; }
+.why {
+  background: #0d1a2b;
+  border-top: 1px solid #ffffff10;
+  border-bottom: 1px solid #ffffff10;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.feature h3 { margin-bottom: 7px; }
+.feature p { color: var(--muted); font-size: 14px; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.contact-card {
+  padding: 27px;
+  background: var(--card);
+  border: 1px solid #ffffff12;
+  border-radius: 15px;
+}
+.contact-card p { color: var(--muted); margin: 10px 0 17px; }
+.contact-card .btn { margin: 5px 5px 5px 0; }
+.map {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 15px;
+  margin-top: 25px;
+}
+footer {
+  padding: 25px 0;
+  border-top: 1px solid #ffffff15;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+.floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+  border-radius: 50px;
+  padding: 13px 19px;
+  background: #19b96b;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 5px 25px #0007;
+}
+@media (max-width: 760px) {
+  .nav { padding: 14px 0; flex-wrap: wrap; }
+  nav { width: 100%; justify-content: space-between; gap: 8px; }
+  nav a { font-size: 12px; }
+  .hero { padding: 60px 0; }
+  .quick-info, .services, .features, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  section { padding: 55px 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">HARI OM <span>TELECOM</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <span class="tag">YOUR LOCAL DIGITAL SERVICE CENTRE</span>
+    <h1>All Your Digital Needs.<br><span>One Trusted Place.</span></h1>
+    <p>
+      Welcome to Hari Om Telecom & Travels.
+      Get assistance with travel ticket enquiries, photocopy,
+      printing, money transfer and everyday digital services
+      in Saraswati Vihar, Pitampura, Delhi.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn"
+         href="https://wa.me/919990567538?text=Hello%20Hari%20Om%20Telecom%20%26%20Travels%2C%20I%20need%20information%20about%20your%20services."
+         target="_blank" rel="noopener">WhatsApp Enquiry ↗</a>
+      <a class="btn btn-outline" href="#services">Explore Services ↓</a>
+    </div>
+
+    <div class="quick-info">
+      <div class="info">
+        <strong>📍 Our Location</strong>
+        <small>Saraswati Vihar, Pitampura, Delhi</small>
+      </div>
+      <div class="info">
+        <strong>✈️ Travel Assistance</strong>
+        <small>Railway & flight ticket enquiries</small>
+      </div>
+      <div class="info">
+        <strong>🖨️ Digital Services</strong>
+        <small>Printing, photocopy & more</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-desc">
+      Everyday services made simple and convenient.
+      Contact us to confirm availability and charges.
+    </p>
+
+    <div class="services">
+      <article class="service">
+        <div class="emoji">🚆</div>
+        <h3>Railway Ticket Enquiry</h3>
+        <p>Get assistance with railway ticket booking enquiries and travel information.</p>
+        <a href="https://wa.me/919990567538?text=I%20need%20a%20railway%20ticket%20enquiry."
+           target="_blank" rel="noopener">Enquire Now →</a>
+      </article>
+
+      <article class="service">
+        <div class="emoji">✈️</div>
+        <h3>Flight Ticket Booking</h3>
+        <p>Ask about flight booking assistance for your upcoming journey.</p>
+        <a href="https://wa.me/919990567538?text=I%20need%20a%20flight%20ticket%20enquiry."
+           target="_blank" rel="noopener">Enquire Now →</a>
+      </article>
+
+      <article class="service">
+        <div class="emoji">🖨️</div>
+        <h3>Photocopy & Printing</h3>
+        <p>Ask us about document photocopying and printout services.</p>
+        <a href="https://wa.me/919990567538?text=I%20need%20printing%20or%20photocopy%20services."
+           target="_blank" rel="noopener">Enquire Now →</a>
+      </article>
+
+      <article class="service">
+        <div class="emoji">💸</div>
+        <h3>Money Transfer</h3>
+        <p>Contact us for information about available money transfer services.</p>
+        <a href="https://wa.me/919990567538?text=I%20need%20a%20money%20transfer%20enquiry."
+           target="_blank" rel="noopener">Enquire Now →</a>
+      </article>
+
+      <article class="service">
+        <div class="emoji">💻</div>
+        <h3>Online Digital Assistance</h3>
+        <p>Ask about online tasks and digital assistance available at our shop.</p>
+        <a href="https://wa.me/919990567538?text=I%20need%20digital%20service%20assistance."
+           target="_blank" rel="noopener">Enquire Now →</a>
+      </article>
+
+      <article class="service">
+        <div class="emoji">📄</div>
+        <h3>Document Services</h3>
+        <p>Contact us to check document-related service availability.</p>
+        <a href="https://wa.me/919990567538?text=I%20have%20a%20document%20service%20enquiry."
+           target="_blank" rel="noopener">Enquire Now →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="about">
+  <div class="container">
+    <h2 class="section-title">Why Visit Hari Om?</h2>
+    <p class="section-desc">
+      A convenient local stop for everyday service enquiries.
+    </p>
+    <div class="features">
+      <div class="feature">
+        <h3>📍 Convenient Location</h3>
+        <p>Located in Saraswati Vihar, Pitampura, New Delhi.</p>
+      </div>
+      <div class="feature">
+        <h3>🤝 Personal Assistance</h3>
+        <p>Contact the shop to discuss your service requirements.</p>
+      </div>
+      <div class="feature">
+        <h3>💬 Easy Enquiries</h3>
+        <p>Use WhatsApp to ask about services before visiting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Visit Our Shop</h2>
+    <p class="section-desc">
+      Get in touch with Hari Om Telecom & Travels.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>📍 Address</h3>
+        <p>
+          Mohan Palace, Shop No. 19, C-Block,<br>
+          Near Post Office, Saraswati Vihar,<br>
+          Pitampura, New Delhi – 110034
+        </p>
+        <h3>📞 Phone</h3>
+        <p>+91 99905 67538</p>
+        <a class="btn" href="tel:+919990567538">Call Now</a>
+        <a class="btn btn-outline"
+           href="https://wa.me/919990567538"
+           target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline"
+           href="https://www.justdial.com/Delhi/Hari-OM-Telecom-Travels-near-state-bank-of-India-Saraswati-Vihar-Pitampura/011PXX11-XX11-100930223224-T7W2_BZDET"
+           target="_blank" rel="noopener">Justdial Listing</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>🕒 Opening Hours</h3>
+        <p>Hours may vary. Please call before visiting to confirm.</p>
+        <h3>📌 Find Us on Google Maps</h3>
+        <p>Open directions to our shop in Pitampura.</p>
+        <a class="btn"
+           href="https://www.google.com/maps/search/?api=1&query=Hari+Om+Telecom+Travels+Mohan+Palace+Shop+19+C+Block+Saraswati+Vihar+Pitampura+Delhi"
+           target="_blank" rel="noopener">Get Directions ↗</a>
+      </div>
+    </div>
+
+    <iframe class="map"
+      title="Find Hari Om Telecom and Travels"
+      src="https://maps.google.com/maps?q=Hari%20Om%20Telecom%20Travels%20Saraswati%20Vihar%20Pitampura%20Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Hari Om Telecom & Travels.
+    All rights reserved.
+    <br>Service availability, prices and timings should be confirmed directly with the shop.
+  </div>
+</footer>
+
+<a class="floating"
+   href="https://wa.me/919990567538?text=Hello%2C%20I%20have%20an%20enquiry."
+   target="_blank" rel="noopener">WhatsApp ↗</a>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+</body>
+</html>
